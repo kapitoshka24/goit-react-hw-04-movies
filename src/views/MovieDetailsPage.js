@@ -1,13 +1,12 @@
-import React, { Component, lazy, Suspense } from "react";
+import React, { Component } from "react";
 import Button from "../components/Button";
 import { routes } from "../routes";
 import { Route, NavLink } from "react-router-dom";
 import { fetchMovies } from "../services/movies-api";
 import MovieDetails from "../components/MovieDetails";
 import "../styles/movieDetails.scss";
-
-const Cast = lazy(() => import("../components/Cast" /* */));
-const Reviews = lazy(() => import("../components/Reviews"));
+import Cast from "../components/Cast";
+import Reviews from "../components/Reviews";
 
 class MovieDetailsPage extends Component {
   state = {
@@ -63,17 +62,15 @@ class MovieDetailsPage extends Component {
           </ul>
         </div>
 
-        <Suspense>
-          <Route
-            path={routes.cast}
-            render={(props) => <Cast {...props} cast={cast} />}
-          />
+        <Route
+          path={routes.cast}
+          render={(props) => <Cast {...props} cast={cast} />}
+        />
 
-          <Route
-            path={routes.reviews}
-            render={(props) => <Reviews {...props} reviews={reviews} />}
-          ></Route>
-        </Suspense>
+        <Route
+          path={routes.reviews}
+          render={(props) => <Reviews {...props} reviews={reviews} />}
+        ></Route>
       </div>
     );
   }
