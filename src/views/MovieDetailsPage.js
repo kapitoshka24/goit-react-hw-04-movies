@@ -33,7 +33,7 @@ class MovieDetailsPage extends Component {
 
     return (
       <div className="movie-details">
-        <Button handleGoBack={this.handleGoBack} />
+        <Button />
 
         {movie && <MovieDetails movie={movie} />}
 
@@ -44,7 +44,7 @@ class MovieDetailsPage extends Component {
               <NavLink
                 to={{
                   pathname: `${match.url}/cast`,
-                  state: { from: location },
+                  state: { from: location.state.from },
                 }}
               >
                 Cast
@@ -54,7 +54,7 @@ class MovieDetailsPage extends Component {
               <NavLink
                 to={{
                   pathname: `${match.url}/reviews`,
-                  state: { from: location },
+                  state: { from: location.state.from },
                 }}
               >
                 Review

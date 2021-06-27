@@ -15,6 +15,7 @@ const Cast = ({ cast }) => (
                   ? `https://image.tmdb.org/t/p/original/${profile_path}`
                   : defaultPerson
               }
+              width="100px"
               alt={name}
             ></img>
             <p className="movie-character">{name}</p>
@@ -41,7 +42,7 @@ Cast.propTypes = {
       name: PropTypes.string.isRequired,
       character: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };
 
 Cast.defaultProps = { cast: { character: "Not indicated" } };
