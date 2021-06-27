@@ -1,0 +1,39 @@
+.cast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  & li {
+    text-align: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc((100% - 100px) / 5);
+    margin-bottom: 20px;
+
+    &:not(:nth-child(5n)) {
+      margin-right: 20px;
+    }
+  }
+  & img {
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+}
+
+.movie-character {
+  font-weight: bold;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+.not-info {
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}

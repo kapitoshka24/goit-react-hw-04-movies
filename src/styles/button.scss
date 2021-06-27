@@ -1,0 +1,21 @@
+.go-back-btn {
+  background-color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  color: #feb386;
+  border: 1px solid #feb386;
+  border-radius: 4px;
+  padding: 10px 20px;
+  display: inline-block;
+
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  min-width: 100px;
+  height: 40px;
+  margin: auto;
+  &:hover {
+    background-color: #feb386;
+    color: white;
+  }
+}
